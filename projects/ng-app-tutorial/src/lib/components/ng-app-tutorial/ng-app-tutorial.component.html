@@ -1,0 +1,29 @@
+<div class="backdrop">
+    <div class="l" [style.width]="selectedNodeLeft$|async"></div>
+    <div class="t" [style.left]="selectedNodeLeft$|async" [style.width]="selectedNodeWidth$|async"
+        [style.height]="selectedNodeTop$|async"></div>
+    <div class="r" [style.left]="selectedNodeRight$|async"></div>
+    <div class="b" [style.left]="selectedNodeLeft$|async" [style.width]="selectedNodeWidth$|async"
+        [style.top]="selectedNodeBottom$|async"></div>
+</div>
+<svg class="svg-layer" [attr.viewBox]="viewbox$|async" [attr.width]="rootWidth$|async"
+    [attr.height]="rootHeight$|async" (click)="close()">
+    <g class="arrow" [innerHtml]="arrow$|async"></g>
+    <g class="frame" [innerHtml]="frame$|async"></g>
+</svg>
+
+<button *ngIf="isClickable$|async" class="placeholder" [style.left]="selectedNodeLeft$|async" [style.top]="selectedNodeTop$|async"
+[style.width]="selectedNodeWidth$|async" [style.height]="selectedNodeHeight$|async"
+(click)="clickPlaceholder($event)"></button>
+
+<div class="help-popup" #popup [style.top]="popupTop$|async" [style.left]="popupLeft$|async">
+    <ng-container *ngIf="content$|async; let content" >
+    <div class="content" [innerHtml]="content"></div>
+    <div class="buttons">
+        <button class="btn close" (click)="hide.emit()">close</button>
+
+        <button class="btn prev" (click)="selectPrev()"> &lt; previous</button>
+        <button class="btn next" (click)="selectNext()">next &gt;</button>
+    </div>
+</ng-container>
+</div>
