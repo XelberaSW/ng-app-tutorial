@@ -13,7 +13,7 @@
         "showdown": "^2.1.0"
     },
     "scripts": {
-        "build": "ng build ng-app-tutorial",
+        "build": "ng build ng-app-tutorial --configuration production",
         "prepublish": "yarn build",
         "prebuild": "cp -f ../../LICENSE ../../README.md ./"
     },
