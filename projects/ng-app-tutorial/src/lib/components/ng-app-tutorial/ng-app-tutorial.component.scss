@@ -4,10 +4,10 @@
     --frame-width: var(--ng-app-tutorial--frame-width, 0.125rem);
     --popup-border-radius: var(--ng-app-tutorial--popup-border-radius, 0.5rem);
     --popup-background: var(--ng-app-tutorial--popup-background, rgba(0 31 63 / 1));
-    --popup-color: var(--popup-color, var(--frame-color));
+    --popup-color: var(--app-tutorial--popup-color, var(--frame-color));
     --popup-shadow: var(--ng-app-tutorial--popup-shadow, 0 1.4286rem 1.7857rem rgba(0, 0, 0, 0.25));
     --btn-background: var(--ng-app-tutorial--btn-background, var(--popup-background));
-    --btn-color: var(--ng-app-tutorial--btn-background, var(--popup-color));
+    --btn-color: var(--ng-app-tutorial--btn-color, var(--popup-color));
     --gap: var(--ng-app-tutorial--gap, 0.625rem);
     --backdrop-background: var(--ng-app-tutorial--backdrop-background, rgba(0 0 0 / 0.5));
     --backdrop-blur: var(--ng-app-tutorial--backdrop-blur, 1px);

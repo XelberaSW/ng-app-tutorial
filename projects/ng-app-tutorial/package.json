@@ -1,12 +1,23 @@
 {
-  "name": "@xelberasw/ng-app-tutorial",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^12.0.0||^13.0.0||^14.0.0||^15.0.0",
-    "@angular/core": "^12.0.0||^13.0.0||^14.0.0||^15.0.0",
-    "showdown": "^2.1.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  }
+    "name": "@xelberasw/ng-app-tutorial",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/XelberaSW/ng-app-tutorial"
+    },
+    "homepage": "https://github.com/XelberaSW/ng-app-tutorial",
+    "peerDependencies": {
+        "@angular/common": "^12.0.0||^13.0.0||^14.0.0||^15.0.0",
+        "@angular/core": "^12.0.0||^13.0.0||^14.0.0||^15.0.0",
+        "showdown": "^2.1.0"
+    },
+    "scripts": {
+        "build": "ng build ng-app-tutorial",
+        "prepublish": "yarn build",
+        "prebuild": "cp -f ../../LICENSE ../../README.md ./"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
 }

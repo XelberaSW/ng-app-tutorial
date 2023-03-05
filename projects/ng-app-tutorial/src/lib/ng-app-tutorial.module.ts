@@ -7,6 +7,9 @@ import { ModuleInitHookService } from './services/module-init-hook.service';
 import { NgAppTutorialService } from './services/ng-app-tutorial.service';
 import { SvgRendererService } from './services/svg-renderer.service';
 
+/**
+ * Module that has all imports and definitions you will need to work with @xelberasw/ng-app-tutorial
+ */
 @NgModule({
     declarations: [
         NgAppTutorialComponent
@@ -23,7 +26,7 @@ import { SvgRendererService } from './services/svg-renderer.service';
 })
 export class NgAppTutorialModule {
     /**
-     *
+     * @private
      */
     constructor(
         @Optional() initHookService: ModuleInitHookService

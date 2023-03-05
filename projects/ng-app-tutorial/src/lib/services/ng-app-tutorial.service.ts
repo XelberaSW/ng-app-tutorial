@@ -5,14 +5,23 @@ import { NgAppTutorialStandaloneComponent } from '../components/ng-app-tutorial-
 import { NgAppTutorialComponent } from '../components/ng-app-tutorial/ng-app-tutorial.component';
 import { ModuleInitHookService } from './module-init-hook.service';
 
+/**
+ * Entry point for tutorial API
+ */
 @Injectable({
     providedIn: 'root'
 })
 export class NgAppTutorialService {
+    /** @private */
     private readonly _vcr: ViewContainerRef;
+    /** @private */
     private _component: ComponentRef<NgAppTutorialComponent> | undefined;
+    /** @private */
     private readonly _supportsStandalone: boolean;
 
+    /**
+     * @private
+     */
     constructor(
         app: ApplicationRef,
         @Inject(DOCUMENT) document: Document,
@@ -26,7 +35,20 @@ export class NgAppTutorialService {
         this._vcr = appComponent.injector.get(ViewContainerRef);
     }
 
-    show(item?: string) {
+    /**
+     * Show tutorial UI
+     */
+    show(): void
+    /**
+     * Show tutorial UI and select specific element at start.
+     * If slement with this is is not available, default one will be selected.
+     * @param itemId Unique identifier of item to be selected
+     */
+    show(itemId: string): void;
+    /**
+     * @private
+     */
+    show(item?: string): void {
         if (!this._component) {
 
             if (this._supportsStandalone) {
@@ -52,6 +74,9 @@ export class NgAppTutorialService {
         this._component.instance.setSelectedNode(item || undefined);
     }
 
+    /**
+     * Hide tutorial UI
+     */
     hide() {
         if (this._component) {
             this._component.destroy();
@@ -59,10 +84,16 @@ export class NgAppTutorialService {
         }
     }
 
+    /**
+     * Select next item
+     */
     next() {
         this._component?.instance?.selectNext();
     }
 
+    /**
+     * Select previous item
+     */
     prev() {
         this._component?.instance?.selectPrev();
     }
